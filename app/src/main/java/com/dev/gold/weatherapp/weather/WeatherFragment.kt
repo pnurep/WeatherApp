@@ -1,19 +1,17 @@
 package com.dev.gold.weatherapp.weather
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dev.gold.weatherapp.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import com.dev.gold.weatherapp.databinding.WeatherFragmentBinding
 
 
 class WeatherFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = WeatherFragment()
-    }
+    private lateinit var binding: WeatherFragmentBinding
 
     private lateinit var viewModel: WeatherViewModel
 
@@ -21,7 +19,8 @@ class WeatherFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.weather_fragment, container, false)
+        binding = WeatherFragmentBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
