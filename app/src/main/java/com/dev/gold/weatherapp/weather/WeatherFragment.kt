@@ -26,6 +26,5 @@ class WeatherFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(WeatherViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 }
